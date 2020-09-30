@@ -81,7 +81,7 @@ function draw() {
   text("Score: "+ score, 500,50);
   
   // display highscore
-  text("Highscore: " + localStorage["HighestScore"], 300, 50);
+  text("Highscore: " + localStorage["HighestScore"], 100, 50);
   
   if (gameState===PLAY){
     score = score + Math.round(getFrameRate()/60);
