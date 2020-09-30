@@ -53,10 +53,10 @@ function setup() {
   ground.x = ground.width /2;
   ground.velocityX = -(6 + 3*score/100);
   
-  gameOver = createSprite(windowWidth/2,100);
+  gameOver = createSprite(300,100);
   gameOver.addImage(gameOverImg);
   
-  restart = createSprite(windowWidth/2,140);
+  restart = createSprite(300,140);
   restart.addImage(restartImg);
   
   gameOver.scale = 0.5;
@@ -87,7 +87,7 @@ function draw() {
     score = score + Math.round(getFrameRate()/60);
     ground.velocityX = -(6 + 3*score/100);
   
-    if(keyDown("space") && trex.y > 161) {
+    if(keyDown("space") || touches.lenght > 0 && trex.y > 161) {
       trex.velocityY = -12;
       jumpSound.play();
     }
