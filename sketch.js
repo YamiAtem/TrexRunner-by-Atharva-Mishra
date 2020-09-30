@@ -81,7 +81,7 @@ function draw() {
   text("Score: "+ score, 500,50);
   
   // display highscore
-  text("Highscore: " + localStorage["HighestScore"], 400, 50);
+  text("Highscore: " + localStorage["HighestScore"], 300, 50);
   
   if (gameState===PLAY){
     score = score + Math.round(getFrameRate()/60);
@@ -90,6 +90,7 @@ function draw() {
     if(keyDown("space") || touches.length > 0 && trex.y > 161) {
       trex.velocityY = -12;
       jumpSound.play();
+      touches = []
     }
     
     if (score%100 === 0 && score > 0) {
