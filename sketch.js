@@ -90,7 +90,12 @@ function draw() {
     if(touches.length > 0 || keyDown("space") && trex.y > 161) {
       trex.velocityY = -12;
       jumpSound.play();
-      touches = []
+    }
+    
+    if(touches.length > 0 && trex.y > 161) {
+      trex.velocityY = -12;
+      jumpSound.play();
+      touches = [];
     }
     
     if (score%100 === 0 && score > 0) {
